@@ -1,36 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            
+        }
+        .container{
+            display: grid;
+            background: rgb(189, 189, 26);
+            height: 100%;
+            width:100% ;
+            grid-template-areas:
+            "header header header"
+            "sidebar content1 content1"
+            "sidebar content2 content3"
+            "footer footer footer"
+            ;
+           
+        }
+        
+        
+        .header{
+            background: red;
+            border: solid black;
+            margin: 20px;
+            padding: 20px;
+            grid-area: header;
+        }
+        .sidebar{
+            background: red;
+            border: solid black;
+             margin: 20px; 
+            padding: 20px;
+            grid-area:sidebar; 
+        }
+        .content1{
+            background: red;
+            border: solid black;
+            margin: 20px;
+            padding: 20px;
+            grid-area:content1;
+        }
+        .content2{
+            background: red;
+            border: solid black;
+            margin: 20px;
+            padding: 20px;
+            grid-area: content2;
+        }
+        .content3{
+            background: red;
+            border: solid black;
+            margin: 20px;
+            padding: 20px;
+            grid-area: content3;
+        }
+        .footer{
+            background: red;
+            border: solid black;
+            margin: 20px;
+            padding: 20px;
+            grid-area:footer;
+        }
+    </style>
 </head>
-<style>
-    *{
-        margin: 0px;
-        padding:0px;
-    }
-    .container{
-        display:flex;
-justify-content: center;
-height: 80vh;
-width: 80vw;
-flex-direction: column;
-
-    }
-    
-   
-</style>
 <body>
+    <div class="item">
     <div class="container">
-    <div class="header">
-       <header>
-        <h1>CodeHelp classes</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae quae adipisci, est eaque illum consequatur!</p>
-    </header>
-</div>
-   
-
+    <div class="header">header</div>
+    <div class="sidebar">sidebar</div>
+    <div class="content1">content1</div>
+    <div class="content2">content2</div>
+    <div class="content3">content3</div>
+    <div class="footer">footer</div>
+    </div>
     
 </body>
 </html>
