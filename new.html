@@ -42,14 +42,22 @@ line-height: 2rem;
       
     }
     .img container{
-        /* position:relative; */
+        display: flex;
+        position:absolute; 
         overflow: hidden;
+        width: 5rem;
+
     }
     .iphone{
-        /* position: absolute; */
-        width: 25rem;
-        margin-bottom: 5px;
+        height: 15rem;
+       object-fit: cover;
+      object-position: center;
     }
+    .card:hover.iphone{
+      transform: scale(1.2);
+      transition-duration: 200ms;
+    }
+    
     .content{
         max-width: 400px;
         
@@ -58,11 +66,14 @@ line-height: 2rem;
         flex-direction:row;
     }
     .footer{
-        flex-direction: row;
+        display: flex;
+        flex-direction: row; 
         justify-content:space-between; 
     }
     .tom img{
+        display: flex;
         height: 3rem;
+        justify-content: space-between;
     }
 </style>
 <body>
