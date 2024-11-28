@@ -1,81 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <style>
-        *{
-            margin: 0;
-            padding: 0;
-            
-        }
-        .container{
-            display: grid;
-            background: rgb(189, 189, 26);
-            height: 100%;
-            width:100% ;
-            grid-template-areas:
-            "header header header"
-            "sidebar content1 content1"
-            "sidebar content2 content3"
-            "footer footer footer"
-            ;
-           
-        }
-        
-        
-        .header{
-            background: red;
-            border: solid black;
-            margin: 20px;
-            padding: 20px;
-            grid-area: header;
-        }
-        .sidebar{
-            background: red;
-            border: solid black;
-             margin: 20px; 
-            padding: 20px;
-            grid-area:sidebar; 
-        }
-        .content1{
-            background: red;
-            border: solid black;
-            margin: 20px;
-            padding: 20px;
-            grid-area:content1;
-        }
-        .content2{
-            background: red;
-            border: solid black;
-            margin: 20px;
-            padding: 20px;
-            grid-area: content2;
-        }
-        .content3{
-            background: red;
-            border: solid black;
-            margin: 20px;
-            padding: 20px;
-            grid-area: content3;
-        }
-        .footer{
-            background: red;
-            border: solid black;
-            margin: 20px;
-            padding: 20px;
-            grid-area:footer;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
+<style>
+    *{
+        margin: 0px;
+        padding: 0px;
+    }
+    .container{
+        display:grid;
+    
+    } 
+    .heading{
+line-height: 2rem;
+       justify-content: center;
+       text-align: center;
+       margin-bottom: 0.5rem;
+       line-height: 2rem;
+    }
+    .mainbody{
+        grid-template-columns: repeat(4,1fr);
+     
+    }
+    .para{
+       
+        text-align: center;
+        /* width:800px ; */
+    }
+    .card{
+        display: flex;
+      flex-direction: column;
+      /* padding-top: 20px; */
+      position: absolute;
+        overflow: hidden;
+        height: 25rem;
+        border: 2px solid black;
+        margin-top: 20px;
+      
+    }
+    .img container{
+        /* position:relative; */
+        overflow: hidden;
+    }
+    .iphone{
+        /* position: absolute; */
+        width: 25rem;
+        margin-bottom: 5px;
+    }
+    .content{
+        max-width: 400px;
+        
+    }
+    .avtar{
+        flex-direction:row;
+    }
+    .footer{
+        flex-direction: row;
+        justify-content:space-between; 
+    }
+    .tom img{
+        height: 3rem;
+    }
+</style>
 <body>
-    <div class="item">
     <div class="container">
-    <div class="header">header</div>
-    <div class="sidebar">sidebar</div>
-    <div class="content1">content1</div>
-    <div class="content2">content2</div>
-    <div class="content3">content3</div>
-    <div class="footer">footer</div>
-    </div>
+        <header>
+                <h1 class="heading">CodeHelps vibes </h1>
+                <p  class="para">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas laborum ipsa quasi, tempora harum asperiores!</p>
+            </header>
+            <div class="mainbody">
+                <div class="card">
+                    <div class="img container">
+                        <img src="iphone img.jpg" alt="" srcset="" class="iphone">
+                    </div>
+                    <div class="content">
+                        <h1>New Gadges Released</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora suscipit reiciendis voluptatem et, sequi distinctio, atque sit corrupti quasi laboriosam fuga voluptate ratione! Nesciunt sapiente nostrum sunt tempora, molestiae deserunt.</p>
+                    </div>
+                     <div class="footer">
+                        
+                            <div class="tom"> <img src="tom jerry.jpg" alt="" srcset="">
+                                <div class="john">john boy</div>
+                            <div class="Dob">DOB</div>
+                            </div>
+                            
+                        </div>
+                        <div class="botton">
+                            Technology
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
     
 </body>
 </html>
