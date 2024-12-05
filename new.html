@@ -8,25 +8,155 @@
         padding: 0;
         text-decoration: none;
     }
+    .header{
+        height: 15vh;
+        width: 100vw;
+       text-align: center;
+       padding-top:1.5rem;
+    }
+    .akgec{
+        height: 1.875rem;
+        width: 1.398rem;
+    }
+    .header-content{
+        min-height: 120px;
+        max-width: 1200px;
+        display: flex;
+        
+
+      
+        justify-content: space-between;
+        align-items: center;
+       margin: 0 auto;
+    }
+    .logo-icon{
+        display: flex;
+        align-items: center;
+        font-size: 2rem;
+        color: black;
+        font-weight: 800;
+        gap: 0.3rem;
+    }
+    .nav{
+        display: flex;
+        gap: 1.2rem;
+        color: black;
+    }
+.nav.link{
+    color: black;
+    font-size: 2.3rem;
+    font-weight: 400;
+    /* transform: color 0.5; */
+   
+}
+.nav-link:hover{
+    color:blue;
+}
+.contect-button{
+    background: blue;
+   border-radius: .3rem;
+   padding:.5rem ;
+   
+   
+}
+.contect-button:hover{
+    color:white;
+}
+.main-content{
+    height: 1250px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding:0.6;
+    margin: 0 auto;
+    align-items: center;
+}
+.content-left{
+    align-items: center;
+    animation: SlideFromleft;
+    animation-name:SlideFromleft ;
+    animation-duration: 1s;
+    animation-direction: forward;
+    /* animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1); */
+    animation-timing-function: ease;
+    /* opacity: 0; */
+}
+@keyframes SlideFromleft {
+    0%{
+transform:translateX(-100px) ;
+opacity: 0;
+    }
+100%{
+    opacity: 1;
+transform: translateX(0px);
+}
+}
+.content-label{
+    font-size:1.15rem ;
+    font-weight:600 ;
+    color: rgb(147, 147, 205);
+    align-self: center;
+}
+.content-title{
+    font-size:3rem;
+    font-weight: 600;
+   
+   
+}
+.content-left{
+    width: 650px;
+}
+.button-group{
+    display: flex;
+    gap: 2rem;
+}
+.start-button{
+    background: blue;
+   border-radius: .3rem;
+   padding:.5rem ;
+   padding-right,left: 0.9em; 
+}
+.tour-button{
+    background: blue;
+   border-radius: .3rem;
+   padding:.5rem ;
+   padding-right,left: 0.9em;
+}
+
    </style>
 </head>
 <body>
     <div class="header">
         <header class="header-content">
             <a href="#logo" class="logo-icon">
-                <img src="akgec symbol.png" alt="akgec">
-                <span class="logo-text`">study sink</span>
+                <img src="akgec symbol.png" alt="akgec" class="akgec">
+                <span class="logo-text`">studySink</span>
             </a>
             <nav class="nav">
-                <a href="#home" class="nav.link">Home</a>
-                <a href="#feature" class="nav.link">Feature</a>
-                <a href="#pricing" class="nav.link">Pricing</a>
-                <a href="#blog" class="nav.link">Blog</a>
-                <a href="#about" class="nav.link">About</a>
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#feature" class="nav-link">Feature</a>
+                <a href="#pricing" class="nav-link">Pricing</a>
+                <a href="#blog" class="nav-link">Blog</a>
+                <a href="#about" class="nav-link">About</a>
             </nav>
             <a href="#contect" class="contect-button"> Contect Us</a>
         </header>
     </div>
-    
+    <div class="content">
+       <section class="main-content">
+        <div class="content-left">
+        <p class="content-label">very proud to introduce</p>
+        <h1 class="content-title">Seamless Learning For Bright Future</h1>
+        <p class="content-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati impedit asperiores laboriosam molestias cupiditate magnam pariatur reprehenderit voluptatibus, labore quia possimus nesciunt eligendi vero aliquid enim sed dolores sequi mollitia culpa harum dolor ex numquam maxime eaque. Ut, id maxime. Accusamus veritatis laboriosam maiores sequi sed consectetur omnis, doloremque facere.?</p>
+        <div class="button-group">
+            <a href="#star" class="start-button">Start Button</a>
+            <a href="#tour" class="tour-button">Tour Button</a>
+        </div>
+    </div>
+    <div class="content-right">
+       <img src="akgec symbol.png" alt="">
+    </div>
+       </section>
+    </div>
 </body>
 </html>
