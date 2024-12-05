@@ -70,8 +70,10 @@
     padding:0.6;
     margin: 0 auto;
     align-items: center;
+    max-width: 1200px;
 }
 .content-left{
+    flex-direction: column;
     align-items: center;
     animation: SlideFromleft;
     animation-name:SlideFromleft ;
@@ -109,20 +111,49 @@ transform: translateX(0px);
 .button-group{
     display: flex;
     gap: 2rem;
+justify-content: center;
+align-items: center;
+padding-top: 0.5rem;
+}
+.start-button:hover{
+    color: white;
+    background:rgb(97, 97, 218);
 }
 .start-button{
     background: blue;
    border-radius: .3rem;
    padding:.5rem ;
-   padding-right,left: 0.9em; 
+   
 }
 .tour-button{
-    background: blue;
+    background:rgb(30, 29, 29);
    border-radius: .3rem;
-   padding:.5rem ;
-   padding-right,left: 0.9em;
+   padding:.5rem ; 
+   /* margin: 2rem; */
+   }
+   .tour-button:hover{
+    color: white;
+    background: #484747;
+   }
+.content-right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 57vh;
 }
-
+.view-port{
+height: 100%;
+border-radius:0.25rem;
+margin-top: 2.2rem;
+}
+@media screen and(min-width:7800px){
+    .main-content{
+    flex-direction:row;
+}
+.content-right{
+    max-width: 50%;
+}
+}
    </style>
 </head>
 <body>
@@ -147,14 +178,14 @@ transform: translateX(0px);
         <div class="content-left">
         <p class="content-label">very proud to introduce</p>
         <h1 class="content-title">Seamless Learning For Bright Future</h1>
-        <p class="content-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati impedit asperiores laboriosam molestias cupiditate magnam pariatur reprehenderit voluptatibus, labore quia possimus nesciunt eligendi vero aliquid enim sed dolores sequi mollitia culpa harum dolor ex numquam maxime eaque. Ut, id maxime. Accusamus veritatis laboriosam maiores sequi sed consectetur omnis, doloremque facere.?</p>
+        <p class="content-description">Lorem ipsum, dolormolestias cupiditate magnam pariatur reprehenderit voluptatibus, labore quia possimus nesciunt eligendi vero aliquid enim sed dolores sequi mollitia culpa harum dolor ex numquam maxime eaque. Ut, id maxime. Accusamus veritatis laboriosam maiores sequi sed consectetur omnis, doloremque facere.?</p>
         <div class="button-group">
             <a href="#star" class="start-button">Start Button</a>
             <a href="#tour" class="tour-button">Tour Button</a>
         </div>
     </div>
     <div class="content-right">
-       <img src="akgec symbol.png" alt="">
+       <img src="view port img.avif" alt="" class="view-port">
     </div>
        </section>
     </div>
