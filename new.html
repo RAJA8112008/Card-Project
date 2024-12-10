@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    <link rel="project.css" href="project.css">
+    <link rel="stylesheet" href="project.css">
 <head>
    <style>
     *{
@@ -64,13 +64,13 @@
 }
 .main-content{
     height: 1250px;
+    width:800px ;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
     padding:0.6;
     margin: 0 auto;
     align-items: center;
-    max-width: 1200px;
 }
 .content-left{
     flex-direction: column;
@@ -146,13 +146,42 @@ height: 100%;
 border-radius:0.25rem;
 margin-top: 2.2rem;
 }
-@media screen and(min-width:7800px){
-    .main-content{
-    flex-direction:row;
-}
+
+ .main-content{
+    
+    flex-direction:column ;
+    max-height :750px;
+   
 .content-right{
     max-width: 50%;
 }
+}
+.company-logo{
+    height: 1.675rem;
+        width: 1.398rem;
+}
+.container{
+    max-height :300px; 
+}
+.company-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.company-grid{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    padding: 1.5rem;
+    margin: 1rem;
+    background: #9d9b9b;
+}
+.company-text{
+    display: flex;
+    justify-content: center;
+}
+.logo-text{
+    padding-top: 0.12rem;
 }
    </style>
 </head>
@@ -178,7 +207,7 @@ margin-top: 2.2rem;
         <div class="content-left">
         <p class="content-label">very proud to introduce</p>
         <h1 class="content-title">Seamless Learning For Bright Future</h1>
-        <p class="content-description">Lorem ipsum, dolormolestias cupiditate magnam pariatur reprehenderit voluptatibus, labore quia possimus nesciunt eligendi vero aliquid enim sed dolores sequi mollitia culpa harum dolor ex numquam maxime eaque. Ut, id maxime. Accusamus veritatis laboriosam maiores sequi sed consectetur omnis, doloremque facere.?</p>
+        <p class="content-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati impedit asperiores laboriosam molestias cupiditate magnam pariatur reprehenderit voluptatibus, labore quia possimus nesciunt eligendi vero aliquid enim sed dolores sequi mollitia culpa harum dolor ex numquam maxime eaque. Ut, id maxime. Accusamus veritatis laboriosam maiores sequi sed consectetur omnis, doloremque facere.?</p>
         <div class="button-group">
             <a href="#star" class="start-button">Start Button</a>
             <a href="#tour" class="tour-button">Tour Button</a>
@@ -188,6 +217,27 @@ margin-top: 2.2rem;
        <img src="view port img.avif" alt="" class="view-port">
     </div>
        </section>
+    </div>
+    <div class="company-container">
+        <h1>Trusted By the Best</h1>
+        <div class="company-grid">
+            <div class="company-text">
+            <img src="google-logo.png" alt="" class="company-logo">
+            <span class="logo-text">Google</span>
+        </div>
+        <div class="company-text">
+            <img src="Twitter logo.jpg" alt="" class="company-logo">
+            <span class="logo-text">Twitter </span>
+        </div>
+        <div class="company-text">
+            <img src="Linkdin logo.jpg" alt="" class="company-logo">
+            <span class="logo-text">Linkedin</span>
+        </div>
+        <div class="company-text">
+            <img src="Insta image logo.jpg" alt="" class="company-logo">
+            <span class="logo-text">Instagram</span>
+        </div>
+        </div>
     </div>
 </body>
 </html>
