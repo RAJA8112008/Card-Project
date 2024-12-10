@@ -1,242 +1,291 @@
 <!DOCTYPE html>
 <html lang="en">
-    <link rel="stylesheet" href="project.css">
 <head>
-   <style>
-    *{
-        margin: 0;
-        padding: 0;
-        text-decoration: none;
-    }
-    .header{
-        height: 15vh;
-        width: 100vw;
-       text-align: center;
-       padding-top:1.5rem;
-    }
-    .akgec{
-        height: 1.875rem;
-        width: 1.398rem;
-    }
-    .header-content{
-        min-height: 120px;
-        max-width: 1200px;
-        display: flex;
-        
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="project.css">
+    <title>StudySink</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-      
-        justify-content: space-between;
-        align-items: center;
-       margin: 0 auto;
-    }
-    .logo-icon{
-        display: flex;
-        align-items: center;
-        font-size: 2rem;
-        color: black;
-        font-weight: 800;
-        gap: 0.3rem;
-    }
-    .nav{
-        display: flex;
-        gap: 1.2rem;
-        color: black;
-    }
-.nav.link{
-    color: black;
-    font-size: 2.3rem;
-    font-weight: 400;
-    /* transform: color 0.5; */
-   
-}
-.nav-link:hover{
-    color:blue;
-}
-.contect-button{
-    background: blue;
-   border-radius: .3rem;
-   padding:.5rem ;
-   
-   
-}
-.contect-button:hover{
-    color:white;
-}
-.main-content{
-    height: 1250px;
-    width:800px ;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    padding:0.6;
-    margin: 0 auto;
-    align-items: center;
-}
-.content-left{
-    flex-direction: column;
-    align-items: center;
-    animation: SlideFromleft;
-    animation-name:SlideFromleft ;
-    animation-duration: 1s;
-    animation-direction: forward;
-    /* animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1); */
-    animation-timing-function: ease;
-    /* opacity: 0; */
-}
-@keyframes SlideFromleft {
-    0%{
-transform:translateX(-100px) ;
-opacity: 0;
-    }
-100%{
-    opacity: 1;
-transform: translateX(0px);
-}
-}
-.content-label{
-    font-size:1.15rem ;
-    font-weight:600 ;
-    color: rgb(147, 147, 205);
-    align-self: center;
-}
-.content-title{
-    font-size:3rem;
-    font-weight: 600;
-   
-   
-}
-.content-left{
-    width: 650px;
-}
-.button-group{
-    display: flex;
-    gap: 2rem;
-justify-content: center;
-align-items: center;
-padding-top: 0.5rem;
-}
-.start-button:hover{
-    color: white;
-    background:rgb(97, 97, 218);
-}
-.start-button{
-    background: blue;
-   border-radius: .3rem;
-   padding:.5rem ;
-   
-}
-.tour-button{
-    background:rgb(30, 29, 29);
-   border-radius: .3rem;
-   padding:.5rem ; 
-   /* margin: 2rem; */
-   }
-   .tour-button:hover{
-    color: white;
-    background: #484747;
-   }
-.content-right{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 57vh;
-}
-.view-port{
-height: 100%;
-border-radius:0.25rem;
-margin-top: 2.2rem;
-}
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
- .main-content{
-    
-    flex-direction:column ;
-    max-height :750px;
-   
-.content-right{
-    max-width: 50%;
-}
-}
-.company-logo{
-    height: 1.675rem;
-        width: 1.398rem;
-}
-.container{
-    max-height :300px; 
-}
-.company-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-.company-grid{
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    padding: 1.5rem;
-    margin: 1rem;
-    background: #9d9b9b;
-}
-.company-text{
-    display: flex;
-    justify-content: center;
-}
-.logo-text{
-    padding-top: 0.12rem;
-}
-   </style>
+        /* Header Section */
+        .header {
+            background: #e3d18e;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-icon {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .akgec {
+            height: 30px;
+            width: 30px;
+            margin-right: 0.5rem;
+        }
+
+        nav {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-link {
+            font-size: 1rem;
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .nav-link:hover {
+            color: blue;
+        }
+
+        .contect-button {
+            background: blue;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: background 0.3s ease-in-out;
+        }
+
+        .contect-button:hover {
+            background: #0056b3;
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 1200px;
+            margin: 2rem auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            padding: 1rem;
+        }
+
+        .content-left {
+            flex: 1;
+            text-align: left;
+        }
+
+        .content-label {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        .content-title {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .content-description {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 1.5rem;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .start-button,
+        .tour-button {
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            text-decoration: none;
+            color: white;
+            transition: background 0.3s ease-in-out;
+        }
+
+        .start-button {
+            background: blue;
+        }
+
+        .start-button:hover {
+            background: #0056b3;
+        }
+
+        .tour-button {
+            background: #333;
+        }
+
+        .tour-button:hover {
+            background: #555;
+        }
+
+        .content-right {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .view-port {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Trusted Section */
+        .company-container {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .company-container h1 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .company-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            padding: 1rem;
+            background: #a78f8f;
+            border-radius: 8px;
+        }
+
+        .company-text {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .company-logo {
+            height: 30px;
+            width: auto;
+        }
+
+        .logo-text {
+            font-size: 1rem;
+            color: #333;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .main-content {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+
+            .content-left {
+                text-align: center;
+            }
+
+            .button-group {
+                justify-content: center;
+            }
+
+            .view-port {
+                width: 90%;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .content-title {
+                font-size: 2rem;
+            }
+
+            .button-group {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .company-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Header Section -->
     <div class="header">
         <header class="header-content">
             <a href="#logo" class="logo-icon">
-                <img src="akgec symbol.png" alt="akgec" class="akgec">
-                <span class="logo-text`">studySink</span>
+                <img src="akgec symbol.png" alt="AKGEC Logo" class="akgec">
+                <span>StudySink</span>
             </a>
-            <nav class="nav">
+            <nav>
                 <a href="#home" class="nav-link">Home</a>
                 <a href="#feature" class="nav-link">Feature</a>
                 <a href="#pricing" class="nav-link">Pricing</a>
                 <a href="#blog" class="nav-link">Blog</a>
                 <a href="#about" class="nav-link">About</a>
             </nav>
-            <a href="#contect" class="contect-button"> Contect Us</a>
+            <a href="#contact" class="contect-button">Contact Us</a>
         </header>
     </div>
-    <div class="content">
-       <section class="main-content">
+
+    <!-- Main Content -->
+    <section class="main-content">
         <div class="content-left">
-        <p class="content-label">very proud to introduce</p>
-        <h1 class="content-title">Seamless Learning For Bright Future</h1>
-        <p class="content-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati impedit asperiores laboriosam molestias cupiditate magnam pariatur reprehenderit voluptatibus, labore quia possimus nesciunt eligendi vero aliquid enim sed dolores sequi mollitia culpa harum dolor ex numquam maxime eaque. Ut, id maxime. Accusamus veritatis laboriosam maiores sequi sed consectetur omnis, doloremque facere.?</p>
-        <div class="button-group">
-            <a href="#star" class="start-button">Start Button</a>
-            <a href="#tour" class="tour-button">Tour Button</a>
+            <p class="content-label">Very Proud to Introduce</p>
+            <h1 class="content-title">Seamless Learning For Bright Future</h1>
+            <p class="content-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Obcaecati impedit asperiores laboriosam molestias cupiditate magnam pariatur reprehenderit voluptatibus.</p>
+            <div class="button-group">
+                <a href="#start" class="start-button">Start Now</a>
+                <a href="#tour" class="tour-button">Take a Tour</a>
+            </div>
         </div>
-    </div>
-    <div class="content-right">
-       <img src="view port img.avif" alt="" class="view-port">
-    </div>
-       </section>
-    </div>
+        <div class="content-right">
+            <img src="view.avif" alt="Viewport Image" class="view-port" height="50%" width="50%">
+        </div>
+    </section>
+
+    <!-- Trusted Section -->
     <div class="company-container">
         <h1>Trusted By the Best</h1>
         <div class="company-grid">
             <div class="company-text">
-            <img src="google-logo.png" alt="" class="company-logo">
-            <span class="logo-text">Google</span>
-        </div>
-        <div class="company-text">
-            <img src="Twitter logo.jpg" alt="" class="company-logo">
-            <span class="logo-text">Twitter </span>
-        </div>
-        <div class="company-text">
-            <img src="Linkdin logo.jpg" alt="" class="company-logo">
-            <span class="logo-text">Linkedin</span>
-        </div>
-        <div class="company-text">
-            <img src="Insta image logo.jpg" alt="" class="company-logo">
-            <span class="logo-text">Instagram</span>
-        </div>
+                <img src="google-logo.png" alt="Google Logo" class="company-logo">
+                <span class="logo-text">Google</span>
+            </div>
+            <div class="company-text">
+                <img src="twitter-logo.jpg" alt="Twitter Logo" class="company-logo">
+                <span class="logo-text">Twitter</span>
+            </div>
+            <div class="company-text">
+                <img src="linkedin-logo.jpg" alt="LinkedIn Logo" class="company-logo">
+                <span class="logo-text">LinkedIn</span>
+            </div>
+            <div class="company-text">
+                <img src="instagram-logo.jpg" alt="Instagram Logo" class="company-logo">
+                <span class="logo-text">Instagram</span>
+            </div>
         </div>
     </div>
 </body>
