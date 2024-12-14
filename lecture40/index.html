@@ -7,11 +7,15 @@
 </head>
 <body>
     <script>
-   
-   let brr = new Array("Babbar", 5,45,25, "Raja", 45, false);
+   let brr = new Array("Babbar", 5, 45, 25, "Raja", 45, false);
 
-console.log(brr.splice(1,4,'kumar'));
-console.log(brr.spice);
+let index = brr.indexOf(25); // Find the index of 25
+if (index !== -1) {
+    brr.splice(index, 1, 'kumar'); // Replace 25 with 'kumar'
+}
+
+console.log(brr); // Logs the updated array
+
     </script>
     
 
