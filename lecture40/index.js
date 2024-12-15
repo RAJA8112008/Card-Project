@@ -1,11 +1,9 @@
- let arr=[10,20,30,40]
- function getsum(arr){
+let arr=[10,20,60,80,90]
+function sumnum(arr){
     let sum=0;
     arr.forEach((value)=>{
         sum=sum+value;
-});
-return sum;
- }
-let totalsum=getsum(arr);
+    })
+    return sum;}
+ let totalsum=sumnum(arr);
 console.log(totalsum);
- 
