@@ -7,10 +7,19 @@
 </head>
 <body>
     <script>
-let arr=[10,20,50,40,60];
-arr.forEach((value,index)=>{
-  console.log("number;",value,"index",index)  
-});
+    let obj={
+        "name":"Love",
+        "age":18,
+        "weight":54,
+        "height":"5ft",
+        "jeet":function addsum(){
+            console.log("Babbar")
+        }
+    }
+    console.log(obj);
+   for(let key in obj){
+    console.log(key);
+   }
     </script>
     
 
