@@ -1,13 +1,5 @@
-//use of forEach in arrays
-let obj={
-    "name":"raja",
-    "age":18,
-    "weight":85,
-    "height":"5ft",
-    Greet:function addnum(){
-console.log("Happy")
-}
-};
-console.log(obj);
-for(let key in obj){
-console.log(key)}
+//use of forEach in Arrays
+let arr=[10,20,30,"Raja"];
+arr.forEach((value,index)=>{
+console.log("Data:",value,"index:",index)
+});
