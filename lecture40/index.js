@@ -1,3 +1,4 @@
 //Array function practice
-let arr=[10,20,"Raja","kumar"]
-console.log(arr);
+let brr=[10,20,"raja","kumar"]
+brr.pop();
+console.log(brr);
