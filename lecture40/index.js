@@ -1,13 +1,11 @@
 //function practice
-let printcount=function (){
-    for(i=1;i<=10;i++){
-        // console.log(i);
-        if(i==5){
-            break;
-        }
-        else{
-            console.log(i);
+let printcount = () => {
+    for (let i = 1; i <= 10; i++) { // Declare i with let
+        if (i == 8) {
+            break; // Exit the loop when i equals 8
+        } else {
+            console.log(i); // Print i otherwise
         }
     }
-}
+};
 printcount();
