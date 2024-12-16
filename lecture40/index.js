@@ -1,8 +1,8 @@
 //function practice
-function printcount(){
+let printcount=function (){
     for(i=1;i<=10;i++){
         // console.log(i);
-        if(i==7){
+        if(i==5){
             break;
         }
         else{
