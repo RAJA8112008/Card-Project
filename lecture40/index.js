@@ -1,9 +1,4 @@
-let i=1;
-while(i<=10){
-    if(i==4){
-    continue;
-}else{
-console.log(i);
-}
-    i++;
-}
+let op1="Love";
+let op2="Babbar";
+let sum =op1+ " "+op2;
+console.log(sum);
