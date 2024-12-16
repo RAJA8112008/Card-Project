@@ -1,4 +1,13 @@
-let op1="Love";
-// let op2="Babbar";
-// // let sum =op1+op2;
-console.log(op1.substring(1,3));
+//function practice
+function printcount(){
+    for(i=1;i<=10;i++){
+        // console.log(i);
+        if(i==7){
+            break;
+        }
+        else{
+            console.log(i);
+        }
+    }
+}
+printcount();
