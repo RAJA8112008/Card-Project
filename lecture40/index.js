@@ -1,10 +1,9 @@
-for(let i=1;i<=10;i++){
+let i=1;
+while(i<=10){
     if(i==4){
-        // console.log(i);
-        continue;
-    }
-    else{
-        console.log(i);
-    }
-
+    break;
+}else{
+console.log(i);
+}
+    i++;
 }
