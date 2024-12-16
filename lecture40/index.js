@@ -1,4 +1,4 @@
-let op1=`Love`;
+let op1=` Love `;
 let op2=`Babbar`;
-let sum =`${op1} ${op2}`;
+let sum =`${op1,length} `;
 console.log(sum);
