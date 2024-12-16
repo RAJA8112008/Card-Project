@@ -1,8 +1,7 @@
 //map in practice
 let arr=[10,20,30,50]
-
-let ans=arr.map((value)=>{
-     return value*value;
+arr.map((number,index)=>{
+    console.log("number :",number);
+    console.log("index :",index);
 })
-console.log(ans);
 
