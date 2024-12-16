@@ -1,7 +1,5 @@
 //map practice
 let arr=[10,20,30]
-let square=arr.map((number)=>{
-    return number*number;
-   
+let ansarray=arr.map((value)=>{
+    console.log(value+1);
 });
-console.log(square);
