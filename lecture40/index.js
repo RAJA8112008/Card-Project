@@ -9,8 +9,8 @@
 // console.log(dest);
 try{
     console.log("I am learning web develepment")
-    console.log(x)
+    // console.log(x)
 }
 catch(err){
-// console.log
+console.log("i reached on wed ")
 }
