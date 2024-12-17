@@ -3,6 +3,6 @@ function greetme(greet,fullname){
     greet();
 }
 function greet(){
-    console.log("greetingforme")
+    console.log()
 }
 greetme(greet,"Babbar");
