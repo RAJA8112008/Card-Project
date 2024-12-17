@@ -1,9 +1,9 @@
-//addition of two functions
-function myname(firstname,lastname){
-    console.log("Raja",lastname);
-    firstname();
-}
-function firstname(){
-    console.log()
-}
-myname(firstname,"kumar")
+let obj={
+    Name:"Raja",
+    course:"B.Tech",
+    ht:80,
+    ht:"5ft",
+};
+let dest={...obj};
+console.log(obj);
+console.log(dest);
