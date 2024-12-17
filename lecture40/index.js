@@ -1,11 +1,9 @@
-function fullname(callback, fullname) {
-    console.log("Raaj", fullname); // Fixed the typo from "fullnmae" to "fullname"
-    callback(); // Execute the callback function
+//addition of two functions
+function myname(firstname,lastname){
+    console.log("Raja",lastname);
+    firstname();
 }
-
-function name() {
-    console.log("Hello from the name function!"); // Added a meaningful message
+function firstname(){
+    console.log()
 }
-
-// Pass the function `name` and a string `"kumar"` to `fullname`
-fullname(name, "kumar");
+myname(firstname,"kumar")
