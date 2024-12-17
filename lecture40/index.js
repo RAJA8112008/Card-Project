@@ -8,6 +8,7 @@ sum=sum+value;
 return sum;
 }
 let totalsum=addvalue(arr);
+
 console.log(totalsum);
 
 
