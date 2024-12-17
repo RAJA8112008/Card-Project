@@ -9,11 +9,12 @@
 // console.log(dest);
 try{
     console.log("I am learning web develepment")
-    //console.log(x)
+    console.log(x)
 }
 catch(err){
 console.log("i reached on wed ")
+throw new Error("print all")
 }
-finally{
-    console.log("i will run every time")
-}
+// finally{
+//     console.log("i will run every time")
+// }
