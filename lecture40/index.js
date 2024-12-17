@@ -14,3 +14,6 @@ try{
 catch(err){
 console.log("i reached on wed ")
 }
+finally{
+    console.log("i will run every time")
+}
