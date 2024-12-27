@@ -4,4 +4,4 @@ function textchange(){
 }
 
 let fpara=document.getElementById('mypara');
-fpara.addEventListener('click',textchange);
+fpara.removeEventListener('click',textchange);
