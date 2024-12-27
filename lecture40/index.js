@@ -1,7 +1,7 @@
 let paras = document.querySelectorAll('p');
 
 function alertPara(event) {
-    alert("You are here: " );
+    alert("You are here: "+event.target.textcontent );
 }
 
 for (let i = 0; i < paras.length; i++) {
