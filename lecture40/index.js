@@ -1,10 +1,9 @@
-let paras = document.querySelectorAll('p');
-
-function alertPara(event) {
-    alert("You are here: "+event.target.textcontent );
+let king=document.querySelectorAll('p');
+function alertevent(event){
+   alert("you are here");
+    
 }
-
-for (let i = 0; i < paras.length; i++) {
-    console.log("Event listener added");
-    paras[i].addEventListener('click', alertPara); // Corrected method and usage
+for(let i=0;i<king.length;i++){
+    console.log("Event listener Added");
+    king[i].addEventListener('click',alertevent);
 }
