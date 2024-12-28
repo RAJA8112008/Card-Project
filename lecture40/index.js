@@ -1,7 +1,7 @@
 
 let mypara = document.querySelectorAll('p');
 function alertpara(event){
-alert("Here is your alert information;"+ event.target.textcontent);
+alert("you clicked here ;"+ event.target.textcontent);
 }
 for(let i=0; i< mypara.length;i++){
     console.log("Event Listener added");
