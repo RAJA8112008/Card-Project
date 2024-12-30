@@ -3,9 +3,9 @@ let input = document.getElementById('inputBox');
 let buttons = document.querySelectorAll('button');
 
 let string= "";  
-let arr= Array.from(buttons);
+let arr= Array.from(buttons);  //turn the list of buttons into Array
 arr.forEach(button =>{
-    button.addEventListener('click', (e)=>{
+    button.addEventListener('click', (e)=>{ 
         if(e.target.innerHTML == '='){
             string = eval(string);
             input.value=string;
