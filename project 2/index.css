@@ -22,3 +22,19 @@ main{
    height:calc(100vh - 80px);
    background-color:rgba(31,36,40);
 }
+.left{
+   width: 50%;
+   height: 50%;
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+
+}
+.song-img{
+   width: 280px;
+   height: 200px;
+   border: radius 50%; ;
+   background-image: url(" ");
+   background-size:cover;
+
+}
