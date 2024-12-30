@@ -24,7 +24,8 @@ body{
 
 input{
     width:320px;
-    border: none;
+    border: 1px solid black;
+    border-radius:12px;
     padding: 24px;
     margin: 10px;
     background:transparent;
