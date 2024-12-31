@@ -53,6 +53,7 @@ main{
    background-color:transparent;
   display: flex;
   align-items: center;
+  background-repeat: 50%;
   justify-content: center;
    box-shadow: 2px,2px,10px rgba(93,92,0,0.8) 2px,2px,10px rgba(0,0,0,0.8) 2px,2px,10px rgba(0,0,0,0.8) 2px,2px,10px rgba(0,0,0,0.8);
 }
@@ -60,10 +61,14 @@ main{
    -webkit-appearance: none;
    width: 40%;
    height: 5px;
+   border-radius: 10px;
+   cursor: pointer;
    background-color: linear-gradient(to right,rgb(91,220,183),rgb(0,229,255));
 }
 #volume-range::-webkit-slider-thumb{
 -webkit-appearance: none;
 background-color:rgba(223,85,145);
 border:2px solid white;
+background-repeat: 50%;
+cursor: pointer;
 }
