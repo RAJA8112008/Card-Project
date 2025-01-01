@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+body{
+    background: rgb(89,90,106);
+    color: white;
+    height: 100vh;
+    display: flex;
+   justify-content: center;
+   align-items:center;
+
+}
+.container{
+  display: flex; 
+  flex-direction:column ; 
+  gap: 2rem;
+  background-color:grey;
+  padding: 20px;
+}
