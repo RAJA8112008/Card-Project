@@ -6,7 +6,7 @@
 }
 body{
     background: rgb(89,90,106);
-    color: white;
+    color:white;
     height: 100vh;
     display: flex;
    justify-content: center;
@@ -16,7 +16,24 @@ body{
 .container{
   display: flex; 
   flex-direction:column ; 
-  gap: 2rem;
-  background-color:grey;
+  gap: 1.0rem;
+  background-color:rgb(69,64,64);
   padding: 20px;
+  border-radius: 5px;
+  width: 50%;
+  max-width: width 600px;
+}
+h1{
+    font-size: 2rem;
+}
+.user-container{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    justify-content: start;
+}
+.user-input-container{
+    display: flex;
+    justify-content: space-between;
+    
 }
