@@ -29,11 +29,40 @@ function valideusername(username){
 async function fetchUerDetails(username){
 
 
-    const url =`https://leetcode-stats-api.herokuapp.com/${username}}`
+    // const url =`https://leetcode-stats-api.herokuapp.com/${username}}`
     try{
         searchButton.textContent ="Searching...";
         searchButton.ariaDisabled=true;
     //    const responce =await fetch(url); //updated code
+   const proxyUrl ='https://cors-anywhere.herokuapp.com/'
+   
+    const targeturl=`https://https:leetcode.com/graph/`;
+
+    const myHeaders=new Headers();
+    myHeaders.append("content-type","application/json");
+
+    const graphql = JSON.stringify({
+
+        query:"\n   queryuserSessionProgress($username: String!) {\n
+            allQuestionsCount {\n  difficulty\n count\n}\n
+            
+            matchedUser(username: $username) {\n  submitStats {\n  acSubmissionNum 
+                { \n  difficulty\n  count\n   submission\n 
+                }
+                \n  totalSubmissionNum {\n    difficulty\n
+                  count\n    submission\n  }\n }\n }\n }\n   ",
+              
+          variables: { "username": `${username}` }
+    })
+
+    const requestOption={
+        method: "POST",
+        headers:myHeaders,
+        body:graphql,
+        redirect:"follow"
+    };
+
+    const response =await fetch(proxyUrl+targetUrl,requestOptions);
        if(!responce.ok){
         throw new Error("unable to fetch the user details");
        }
