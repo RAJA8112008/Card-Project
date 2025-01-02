@@ -66,8 +66,9 @@ async function fetchUerDetails(username){
        if(!responce.ok){
         throw new Error("unable to fetch the user details");
        }
-       const data =await responce.json();
-       console.log("Logging data: ",data);
+       const parsedData =await responce.json();
+       console.log("Logging data: ",parsedData);
+       displayUserData(parsedData);
     }
     catch(error){
         statsContainer.innerHTML=<p>No data found</p>
@@ -76,7 +77,27 @@ async function fetchUerDetails(username){
         searchButton.textContent ="Search";
         searchButton.ariaDisabled=false;
     }
-}
+
+    function displayUserData(parsedData){
+        
+        const totalQues = parsedData.data.allQuestionsCount[0].count;
+        const totalEasyQues = parsedData.data.allQuestionsCount[1].count;
+    const totalMediumQues = parsedData.data.allQuestionsCount[2].count;
+    const totalHardQues = parsedData.data.allQuestionsCount[3].count;
+   
+
+   const solvedTotalQues = parsedData.data.matchedUser.submitStats.acSubmissionNum[0].cout;
+   acSubmissionNum[0].cout;
+   const solvedEasyQues = parsedData.data.allQuestionsCount[0].count;
+   acSubmissionNum[0].cout;
+   const solvedTotalQues = parsedData.data.allQuestionsCount[0].count;
+   acSubmissionNum[0].cout;
+   const solvedTotalQues = parsedData.data.allQuestionsCount[0].count;
+   acSubmissionNum[0].cout;
+
+
+
+    }
 searchButton.addEventListener('click',function(){
     const username=usernameInput.value;
 console.log("logggin username :",username);
