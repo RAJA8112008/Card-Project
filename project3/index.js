@@ -103,8 +103,12 @@ async function fetchUerDetails(username){
         updateProgress(solvedTotalMediumQues,totalMediumQues,MediumLabel,mediumProgressCircle);
 
         updateProgress(solvedTotalHardQues,totalHardQues,HardLabel,HaedProgressCircle);
-
-      
+const cardData =[
+{label:"Overall Submissions",value:parsedData.data.matchedUser.submitStats.totalSubmissionNum[0].submissions},
+{label:"Overall EasySubmissions",value:parsedData.data.matchedUser.submitStats.totalSubmissionNum[1].submissions},
+{label:"Overall MediumSubmissions",value:parsedData.data.matchedUser.submitStats.totalSubmissionNum[2].submissions},
+{label:"Overall HardSubmissions",value:parsedData.data.matchedUser.submitStats.totalSubmissionNum[3].submissions},
+];
     }
 searchButton.addEventListener('click',function(){
     const username=usernameInput.value;
@@ -114,4 +118,3 @@ fetchUerDetails(username);
 }
 })
 
-})
