@@ -77,7 +77,11 @@ async function fetchUerDetails(username){
         searchButton.textContent ="Search";
         searchButton.ariaDisabled=false;
     }
-
+    function updateProgress(solved,total,label,circle){
+            const progressDegree =(solved/total)*100;
+           circle.style.setProperty("--progress-degree",`${progressDegree}%`)
+           label.textContent = `${solved}/${total}`;
+    }
     function displayUserData(parsedData){
         
         const totalQues = parsedData.data.allQuestionsCount[0].count;
@@ -89,14 +93,18 @@ async function fetchUerDetails(username){
    const solvedTotalQues = parsedData.data.matchedUser.submitStats.acSubmissionNum[0].cout;
    acSubmissionNum[0].cout;
    const solvedEasyQues = parsedData.data.allQuestionsCount[0].count;
-   acSubmissionNum[0].cout;
-   const solvedTotalQues = parsedData.data.allQuestionsCount[0].count;
-   acSubmissionNum[0].cout;
-   const solvedTotalQues = parsedData.data.allQuestionsCount[0].count;
-   acSubmissionNum[0].cout;
+   acSubmissionNum[1].cout;
+   const solvedTotalMediumQues = parsedData.data.allQuestionsCount[0].count;
+   acSubmissionNum[2].cout;
+   const solvedTotalHardQues = parsedData.data.allQuestionsCount[0].count;
+   acSubmissionNum[3].cout;
 
+        updateProgress(solvedTotalEasyQues,totalEasyQues,easyLabel,easyProgress);
+        updateProgress(solvedTotalMediumQues,totalMediumQues,MediumLabel,mediumProgressCircle);
 
+        updateProgress(solvedTotalHardQues,totalHardQues,HardLabel,HaedProgressCircle);
 
+      
     }
 searchButton.addEventListener('click',function(){
     const username=usernameInput.value;
