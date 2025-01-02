@@ -27,7 +27,26 @@ function valideusername(username){
     return isMatching;
 }
 async function fetchUerDetails(username){
+
+
     const url =`https://leetcode-stats-api.herokuapp.com/${username}}`
+    try{
+        searchButton.textContent ="Searching...";
+        searchButton.ariaDisabled=true;
+    //    const responce =await fetch(url); //updated code
+       if(!responce.ok){
+        throw new Error("unable to fetch the user details");
+       }
+       const data =await responce.json();
+       console.log("Logging data: ",data);
+    }
+    catch(error){
+        statsContainer.innerHTML=<p>No data found</p>
+    }
+    finally{
+        searchButton.textContent ="Search";
+        searchButton.ariaDisabled=false;
+    }
 }
 searchButton.addEventListener('click',function(){
     const username=usernameInput.value;
