@@ -71,7 +71,7 @@ async function fetchUerDetails(username){
        displayUserData(parsedData);
     }
     catch(error){
-        statsContainer.innerHTML=<p>No data found</p>
+        statsContainer.innerHTML=<p>${Error.message}</p>
     }
     finally{
         searchButton.textContent ="Search";
@@ -109,6 +109,17 @@ const cardData =[
 {label:"Overall MediumSubmissions",value:parsedData.data.matchedUser.submitStats.totalSubmissionNum[2].submissions},
 {label:"Overall HardSubmissions",value:parsedData.data.matchedUser.submitStats.totalSubmissionNum[3].submissions},
 ];
+
+cardStatsContainer.innerHTML = cardsData.map(
+    data =>{
+        return`
+        <div class="card">
+        <h3>${data.label}</h3>
+        <p>${data.value}</p>
+        </div>
+        `
+    }
+)
     }
 searchButton.addEventListener('click',function(){
     const username=usernameInput.value;
