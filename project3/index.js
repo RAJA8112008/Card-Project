@@ -33,6 +33,7 @@ async function fetchUerDetails(username){
     try{
         searchButton.textContent ="Searching...";
         searchButton.ariaDisabled=true;
+        statsContainer.classList.add("hidden");
     //    const responce =await fetch(url); //updated code
    const proxyUrl ='https://cors-anywhere.herokuapp.com/'
    
