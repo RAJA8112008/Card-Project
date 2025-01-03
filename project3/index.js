@@ -36,7 +36,6 @@ async function fetchUerDetails(username){
         statsContainer.classList.add("hidden");
     //    const responce =await fetch(url); //updated code
    const proxyUrl ='https://cors-anywhere.herokuapp.com/'
-   
     const targeturl=`https://https:leetcode.com/graph/`;
 
     const myHeaders=new Headers();
@@ -44,14 +43,7 @@ async function fetchUerDetails(username){
 
     const graphql = JSON.stringify({
 
-        query:"\n   queryuserSessionProgress($username: String!) {\n
-            allQuestionsCount {\n  difficulty\n count\n}\n
-            
-            matchedUser(username: $username) {\n  submitStats {\n  acSubmissionNum 
-                { \n  difficulty\n  count\n   submission\n 
-                }
-                \n  totalSubmissionNum {\n    difficulty\n
-                  count\n    submission\n  }\n }\n }\n }\n   ",
+        query:"\n   query userSessionProgress($username: String!) {\n allQuestionsCount {\n  difficulty\n count\n }\n matchedUser(username: $username) {\n  submitStats {\n  acSubmissionNum { \n  difficulty\n  count\n   submission\n } \n  totalSubmissionNum {\n    difficulty\n count\n    submission\n  }\n  }\n }\n }\n   ",
               
           variables: { "username": `${username}` }
     })
