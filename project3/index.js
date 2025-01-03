@@ -111,15 +111,12 @@ const cardData =[
 ];
 
 cardStatsContainer.innerHTML = cardsData.map(
-    data =>{
-        return`
-        <div class="card">
-        <h3>${data.label}</h3>
-        <p>${data.value}</p>
-        </div>
-        `
-    }
-)
+    data =>
+    `<div class="card">
+     <h4>${data.label}</h4>
+     <p>${data.value}</p>
+    </div>`
+).join("")
     }
 searchButton.addEventListener('click',function(){
     const username=usernameInput.value;
