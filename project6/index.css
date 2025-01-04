@@ -16,18 +16,31 @@ body{
 }
 .stopBtn{
     background: red;
-    height:30px;
-    width: 80px;
-    border-radius:;
-    border: white;
+    height:50px;
+    width: 90px;
+    border-radius:2rem;
 }
 .startBtn{
     background: green;
-    height:30px;
-    width: 80px;
+    height:50px;
+    width: 90px;
+    border-radius:2rem;
+    align-items: center;
 }
 .resetBtn{
     background: blue;
-    height:30px;
-    width: 80px;
+    height:50px;
+    width: 90px;
+    border-radius:2rem;
+}
+.Btncontainer{
+
+    display: flex;
+    height: 50px;
+    width:300px;
+    border:black ;
+    text-align: center;
+    flex-direction: row;
+    justify-content:space-between ;
+
 }
