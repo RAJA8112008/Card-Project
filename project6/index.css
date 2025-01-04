@@ -4,34 +4,47 @@
     box-sizing:border-box;
 }
 body{
-    background:yellow ;
+    background:rgba(0,0,0,0.7);
     width: 100vw;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    color: white;
+
 }
 .timedisplay{
     background: green;
+    display: flex;
+    height: 60px;
+    width:300px;
+    padding: 25px;
+    margin: 20px;
+    border-radius: 1.0rem;
+    color: white;
+    
 }
 .stopBtn{
     background: red;
     height:50px;
     width: 90px;
-    border-radius:2rem;
+    color:white ;
+    border-radius:1rem;
 }
 .startBtn{
     background: green;
     height:50px;
     width: 90px;
-    border-radius:2rem;
+    border-radius:1rem;
     align-items: center;
+    color: white;
 }
 .resetBtn{
     background: blue;
     height:50px;
     width: 90px;
-    border-radius:2rem;
+    border-radius:1rem;
+    color: white;
 }
 .Btncontainer{
 
