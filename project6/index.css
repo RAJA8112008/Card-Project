@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+}
+body{
+    background:yellow ;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.timedisplay{
+    background: green;
+}
+.stopBtn{
+    background: red;
+    height:30px;
+    width: 80px;
+    border-radius:;
+    border: white;
+}
+.startBtn{
+    background: green;
+    height:30px;
+    width: 80px;
+}
+.resetBtn{
+    background: blue;
+    height:30px;
+    width: 80px;
+}
