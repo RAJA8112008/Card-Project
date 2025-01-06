@@ -6,15 +6,25 @@
     box-sizing: sans-serif;
 }
 body {
-    background-image: url(Screenshot\ 2025-01-06\ 162252.png);
+    background-image: url(Screenshot\ 2025-01-06\ 174426.png);
     font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    width: 100vw;
     margin: 0;
     background-color: rgba(0,0,0,0.5);
 }
+body{
+    background: cover;
+    background-position:center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+
+}
+
 
 .timer-container {
     text-align: center;
@@ -52,9 +62,9 @@ button {
 
 button:hover {
     background:pink;
-    transform:scale(0.3);
+    transform:scale(-2,3,2);
     transition: transform 
-    0.3ms;
+    1m;
     background:green;
 }
 
