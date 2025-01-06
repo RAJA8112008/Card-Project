@@ -18,7 +18,7 @@ body {
 
 .timer-container {
     text-align: center;
-    background:transparent;
+    background:rgb(78, 67, 67);
     padding: 20px 40px;
     border-radius: 10px;
     box-shadow: 2px 4px 10px rgba(10, 10, 47, 0.8);
@@ -50,7 +50,7 @@ button {
 
 button:hover {
     background:pink;
-    transform:scale(1);
+    transform:scale(0.3);
     transition: transform 
     0.3ms;
     background:green;
