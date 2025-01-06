@@ -41,14 +41,23 @@ button {
     border-radius: 5px;
     cursor: pointer;
     background: #007bff;
-    color: white;
+    color:white;
     transition: background 0.3s;
 }
 
 button:hover {
-    background: #0056b3;
+    background:red;
 }
 
 button:active {
     background: #003f8a;
+}
+#start-btn{
+ background: red;
+}
+#pause-btn{
+    background:blue;
+}
+#reset-btn{
+background:green;
 }
