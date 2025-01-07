@@ -7,14 +7,16 @@ const startBtn = document.getElementById('start-btn');
 const pauseBtn = document.getElementById('pause-btn');
 const resetBtn = document.getElementById('reset-btn');
 
-function formatTime(seconds) {
+function formatTime(seconds){
     const hrs = Math.floor(seconds / 3600).toString().padStart(2, '0');
     const mins = Math.floor((seconds % 3600) / 60).toString().padStart(2, '0');
     const secs = (seconds % 60).toString().padStart(2, '0');
     return `${hrs}:${mins}:${secs}`;
 }
 
-function updateTimerDisplay() {
+function updateTimerDisplay(){
+
+
     timerDisplay.textContent = formatTime(totalSeconds);
 }
 
