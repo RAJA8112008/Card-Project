@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../.."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Coding",
+		"files.associations": {
+			"iostream": "cpp"
+		}
+	}
+}
