@@ -2,9 +2,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const searchButton = document.getElementById("search-btn");
     const usernameInput = document.getElementById("user-input");
     const statsContainer = document.querySelector(".stats-container");
-    const easyProgressCircle = document.querySelector(".easy-progress");
-    const mediumProgressCircle = document.querySelector(".medium-progress");
-    const hardProgressCircle = document.querySelector(".hard-progress");
+    const easyProgressCircle = document.querySelector(".Easy-progress");
+    const mediumProgressCircle = document.querySelector(".Medium-progress");
+    const hardProgressCircle = document.querySelector(".Hard-progress");
     const easyLabel = document.getElementById("easy-label");
     const mediumLabel = document.getElementById("medium-label");
     const hardLabel = document.getElementById("hard-label");
@@ -16,11 +16,11 @@ document.addEventListener("DOMContentLoaded", function () {
             return false;
         }
         const regex = /^[a-zA-Z0-9_-]{1,15}$/;
-        if (!regex.test(username)) {
+        const isMatching = regex.test(username);
+        if (!isMatching) {
             alert("Invalid Username");
-            return false;
         }
-        return true;
+        return isMatching;
     }
 
     async function fetchUserDetails(username) {
@@ -35,16 +35,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
             const graphql = JSON.stringify({
                 query: `
-                query userSessionProgress($username: String!) {
-                    allQuestionsCount { difficulty count }
-                    matchedUser(username: $username) {
-                        submitStats {
-                            acSubmissionNum { difficulty count }
-                            totalSubmissionNum { difficulty count }
+                    query userSessionProgress($username: String!) {
+                        allQuestionsCount {
+                            difficulty
+                            count
+                        }
+                        matchedUser(username: $username) {
+                            submitStats {
+                                acSubmissionNum {
+                                    difficulty
+                                    count
+                                }
+                                totalSubmissionNum {
+                                    difficulty
+                                    count
+                                }
+                            }
                         }
                     }
-                }`,
-                variables: { username }
+                `,
+                variables: { username: username }
             });
 
             const requestOptions = {
@@ -59,12 +69,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 throw new Error("Unable to fetch user details.");
             }
             const parsedData = await response.json();
-            if (!parsedData.data.matchedUser) {
-                throw new Error("User not found.");
-            }
             displayUserData(parsedData);
         } catch (error) {
-            alert(`Error: ${error.message}`);
+            statsContainer.textContent = `Error: ${error.message}`;
         } finally {
             searchButton.textContent = "Search";
             searchButton.removeAttribute("aria-disabled");
@@ -78,23 +85,23 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function displayUserData(parsedData) {
-        const totalEasyQues = parsedData.data.allQuestionsCount.find(q => q.difficulty === "Easy")?.count || 0;
-        const totalMediumQues = parsedData.data.allQuestionsCount.find(q => q.difficulty === "Medium")?.count || 0;
-        const totalHardQues = parsedData.data.allQuestionsCount.find(q => q.difficulty === "Hard")?.count || 0;
+        const totalEasyQues = parsedData.data.allQuestionsCount.find(q => q.difficulty === "Easy").count;
+        const totalMediumQues = parsedData.data.allQuestionsCount.find(q => q.difficulty === "Medium").count;
+        const totalHardQues = parsedData.data.allQuestionsCount.find(q => q.difficulty === "Hard").count;
 
-        const solvedEasyQues = parsedData.data.matchedUser.submitStats.acSubmissionNum.find(q => q.difficulty === "Easy")?.count || 0;
-        const solvedMediumQues = parsedData.data.matchedUser.submitStats.acSubmissionNum.find(q => q.difficulty === "Medium")?.count || 0;
-        const solvedHardQues = parsedData.data.matchedUser.submitStats.acSubmissionNum.find(q => q.difficulty === "Hard")?.count || 0;
+        const solvedEasyQues = parsedData.data.matchedUser.submitStats.acSubmissionNum.find(q => q.difficulty === "Easy").count;
+        const solvedMediumQues = parsedData.data.matchedUser.submitStats.acSubmissionNum.find(q => q.difficulty === "Medium").count;
+        const solvedHardQues = parsedData.data.matchedUser.submitStats.acSubmissionNum.find(q => q.difficulty === "Hard").count;
 
         updateProgress(solvedEasyQues, totalEasyQues, easyLabel, easyProgressCircle);
         updateProgress(solvedMediumQues, totalMediumQues, mediumLabel, mediumProgressCircle);
         updateProgress(solvedHardQues, totalHardQues, hardLabel, hardProgressCircle);
 
         const cardsData = [
-            { label: "Overall Submissions", value: parsedData.data.matchedUser.submitStats.totalSubmissionNum.reduce((sum, q) => sum + q.count, 0) || 0 },
-            { label: "Easy Submissions", value: solvedEasyQues },
-            { label: "Medium Submissions", value: solvedMediumQues },
-            { label: "Hard Submissions", value: solvedHardQues }
+            { label: "Overall Submissions", value: parsedData.data.matchedUser.submitStats.totalSubmissionNum.reduce((sum, q) => sum + q.count, 0) },
+            { label: "Easy Submissions", value: parsedData.data.matchedUser.submitStats.totalSubmissionNum.find(q => q.difficulty === "Easy").count },
+            { label: "Medium Submissions", value: parsedData.data.matchedUser.submitStats.totalSubmissionNum.find(q => q.difficulty === "Medium").count },
+            { label: "Hard Submissions", value: parsedData.data.matchedUser.submitStats.totalSubmissionNum.find(q => q.difficulty === "Hard").count },
         ];
 
         cardStatsContainer.innerHTML = cardsData.map(data => `
@@ -103,7 +110,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 <p>${data.value}</p>
             </div>
         `).join("");
-
         statsContainer.classList.remove("hidden");
     }
 
