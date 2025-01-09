@@ -15,6 +15,19 @@ btn.addEventListener("click",()=>{
    }
 })
 async function getweather(city){
-const responce =await fetch(`https://api.openweathermap.org/data/2.5/weather?q=$(city)&appid=${key}&units=metric`)
-console.log(responce)
+const responce =await fetch(`https://api.openweathermap.org/data/2.5/weather?q=$(city)&appid=${key}&units=metric`);
+
+
+const data = await responce.json()
+if(responce.ok){
+displayweather(data)
+}
+else{
+    show
+}
+}
+function displayweather(data){
+city.textcontent = `${data.name},${data.sys.country}`
+temperature.textcontent=`${Math.round(data.main.temp)}`;
+descripton.textContent=`${data.weather[0].descripton}`
 }
