@@ -10,8 +10,11 @@ let icon = document.getElementById("weather-icon")
 
 btn.addEventListener("click",()=>{
     const city= Cityinput.value
-   
+   if(city){
+    getweather(city)
+   }
 })
 async function getweather(city){
-const responce =await fetch(`https://api.openweathermap.org/data/2.5/weather?q=$(city)`)
+const responce =await fetch(`https://api.openweathermap.org/data/2.5/weather?q=$(city)&appid=${key}&units=metric`)
+console.log(responce)
 }
