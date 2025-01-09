@@ -1,1 +1,9 @@
 let key ="f7137cad736f228e66fc0dc27f82585a"
+let input =document.getElementById("#input")
+let btn =document.getElementById("search-btn")
+let city =document.getElementById("city-name")
+let weatherInfoCard= document.getElementById("weather-info")
+let temperature =document.getElementById("temperature")
+let descripton=document.getElementById("descripton")
+let erroeMessage= document.getElementById("erroe-message")
+let icon = document.getElementById("weather-icon")
