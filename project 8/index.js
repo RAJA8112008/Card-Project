@@ -23,11 +23,26 @@ if(responce.ok){
 displayweather(data)
 }
 else{
-    show
+    showError(data.message)
 }
 }
 function displayweather(data){
 city.textcontent = `${data.name},${data.sys.country}`
 temperature.textcontent=`${Math.round(data.main.temp)}`;
-descripton.textContent=`${data.weather[0].descripton}`
+descripton.textContent=`${data.weather[0].descripton.toUpperCase}`
+
+
+const iconCode = data.weather[0].icon;
+icon.style.backgroundImage = `url(https://openweathermap.org/img/wn/${iconCode}@2x.png)`;
+
+
+
+weatherInfoCard.style.display="block"
+
+erroeMessage.textcontent=""
+
+}
+function showError(message){
+    erroeMessage.textcontent = Message;
+    weatherInfoCard.style.display="none";
 }
