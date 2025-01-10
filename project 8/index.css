@@ -64,10 +64,10 @@ margin-top:30px;
    align-items: center;
    flex-direction: column;
 }
-#descripton{
+#description{
   text-align: center;
 }
-.weather-card #erroe-messager{
+.weather-card #error-messager{
     color: red;
     font-weight: 700;
 }
