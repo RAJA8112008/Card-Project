@@ -52,6 +52,20 @@ const score =0;
 const loadQuiz  = ()=>{
     const {question, options}=quizData[currentQuiz];
     questionElm.innerHTML=question;
+    options.forEach((curOption,index)=> 
+    (window[`option_${index + 1}`].innerHTML=curOption)
+);
 };
 loadQuiz();
+
+const getSelectedOption = () =>{
+    let ans_index;
+    answerElm.forEach((curOption,index)=>{
+if(curOption)
+    });
+};
+
+submitBtn.addEventListener('click',()=>{
+    const selectedOptionIndex = getSelectedOption();
+})
 
