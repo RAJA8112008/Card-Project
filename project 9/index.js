@@ -49,5 +49,9 @@ const submitBtn = document.querySelector("#submit");
 
 const currentQuiz =0;
 const score =0;
-loadQ
+const loadQuiz  = ()=>{
+    const {question, options}=quizData[currentQuiz];
+    questionElm.innerHTML=question;
+};
+loadQuiz();
 
