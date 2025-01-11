@@ -49,3 +49,5 @@ const submitBtn = document.querySelector("#submit");
 
 const currentQuiz =0;
 const score =0;
+loadQ
+
