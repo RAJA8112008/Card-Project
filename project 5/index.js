@@ -2,9 +2,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const searchButton = document.getElementById("search-btn");
     const usernameInput = document.getElementById("user-input");
     const statsContainer = document.querySelector(".stats-container");
-    const easyProgressCircle = document.querySelector(".Easy-progress");
-    const mediumProgressCircle = document.querySelector(".Medium-progress");
-    const hardProgressCircle = document.querySelector(".Hard-progress");
+    const easyProgressCircle = document.querySelector(".easy-progress");
+    const mediumProgressCircle = document.querySelector(".medium-progress");
+    const hardProgressCircle = document.querySelector(".hard-progress");
     const easyLabel = document.getElementById("easy-label");
     const mediumLabel = document.getElementById("medium-label");
     const hardLabel = document.getElementById("hard-label");
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
     async function fetchUserDetails(username) {
         const targetUrl = `https://leetcode.com/graphql/`;
         try {
-            searchButton.textContent = "Searching...";
+            searchButton.innerHTML = '<div class="loader"></div>'; // Show loader
             searchButton.setAttribute("aria-disabled", "true");
             statsContainer.classList.add("hidden");
 
@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
         } catch (error) {
             statsContainer.textContent = `Error: ${error.message}`;
         } finally {
-            searchButton.textContent = "Search";
+            searchButton.innerHTML = "Search"; // Revert button to original text
             searchButton.removeAttribute("aria-disabled");
         }
     }
