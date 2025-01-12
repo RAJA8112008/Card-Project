@@ -24,16 +24,15 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     async function fetchUserDetails(username) {
-        const targetUrl = `https://leetcode.com/graphql/`;
-        try {
-            searchButton.innerHTML = '<div class="loader"></div>'; // Show loader
-            searchButton.setAttribute("aria-disabled", "true");
-            statsContainer.classList.add("hidden");
+    const targetUrl = `http://localhost:3000/proxy`;
+    try {
+        searchButton.innerHTML = '<div class="loader"></div>';
+        searchButton.setAttribute("aria-disabled", "true");
+        statsContainer.classList.add("hidden");
 
-            const myHeaders = new Headers();
-            myHeaders.append("Content-Type", "application/json");
-
-            const graphql = JSON.stringify({
+        const graphql = {
+            url: 'https://leetcode.com/graphql/',
+            body: {
                 query: `
                     query userSessionProgress($username: String!) {
                         allQuestionsCount {
@@ -55,28 +54,27 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
                 `,
                 variables: { username: username }
-            });
+            },
+        };
 
-            const requestOptions = {
-                method: "POST",
-                headers: myHeaders,
-                body: graphql,
-                redirect: "follow"
-            };
-
-            const response = await fetch(targetUrl, requestOptions);
-            if (!response.ok) {
-                throw new Error("Unable to fetch user details.");
-            }
-            const parsedData = await response.json();
-            displayUserData(parsedData);
-        } catch (error) {
-            statsContainer.textContent = `Error: ${error.message}`;
-        } finally {
-            searchButton.innerHTML = "Search"; // Revert button to original text
-            searchButton.removeAttribute("aria-disabled");
+        const response = await fetch(targetUrl, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(graphql),
+        });
+        if (!response.ok) {
+            throw new Error('Unable to fetch user details.');
         }
+        const parsedData = await response.json();
+        displayUserData(parsedData);
+    } catch (error) {
+        statsContainer.textContent = `Error: ${error.message}`;
+    } finally {
+        searchButton.innerHTML = 'Search';
+        searchButton.removeAttribute('aria-disabled');
     }
+}
+
 
     function updateProgress(solved, total, label, circle) {
         const progressDegree = (solved / total) * 100;
