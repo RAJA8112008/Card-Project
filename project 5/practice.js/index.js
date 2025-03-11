@@ -1,8 +1,7 @@
 
-
-function printcounting(){
-    for(let i=1;i<=51;i++){
-        console.log(i);
-    }
+function myname(firstname,lastname){
+    let fullname = firstname+lastname;
+    return fullname;
 }
-printcounting();
+ let totalname=myname("raja","kumar");
+ console.log(totalname);
