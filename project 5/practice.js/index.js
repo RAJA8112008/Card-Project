@@ -1,2 +1,2 @@
-let sumnum = "babbersherr";
-console.log(sumnum.substring(2,6));
+let sumnum = " babber sherr";
+console.log(sumnum.split(" "));
