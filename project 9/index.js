@@ -11,33 +11,34 @@ const quizData = [
     },
     {
         question: "What does CSS stand for?",
-        option: [
+        options: [ 
             "Computer Style Sheet",
             "Cascading Style Sheet",
             "Creative Style System",
             "Colorful Style Sheet",
         ],
-        correct: 1,
+        correct: 1, 
     },
+    
     {
-        question: "What does JS stand for?",
+        question: "What is the correct way to declare a variable in JavaScript?",
         option: [
-            "Java Syntax",
-            "Java System",
-            "JavaScript",
-            "Jumbo Script",
-        ],
-        correct: 2,
-    },
-    {
-        question: "What does HTTP stand for?",
-        option: [
-            "HyperText Transfer Protocol",
-            "HyperText Transmission Protocol",
-            "High Transmission Text Protocol",
-            "Hyperlink Transfer Protocol",
+            "var x = 10;",
+            "variable x = 10;",
+            " x = 10;",
+            "let x == 10;",
         ],
         correct: 0,
+    },
+    {
+        question: "Which of the following is NOT a JavaScript data type?",
+        option: [
+            "string",
+            "boolean",
+            "float",
+            "undefined",
+        ],
+        correct: 2,
     },
 ];
 
