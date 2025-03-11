@@ -1,2 +1,8 @@
-let sumnum = " babber sherr";
-console.log(sumnum.split('_'));
+
+
+function printcounting(){
+    for(let i=1;i<=51;i++){
+        console.log(i);
+    }
+}
+printcounting();
