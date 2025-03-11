@@ -1,2 +1,2 @@
 let sumnum = " babber sherr";
-console.log(sumnum.split(" "));
+console.log(sumnum.split('_'));
