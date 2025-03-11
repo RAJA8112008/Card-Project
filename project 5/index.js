@@ -16,30 +16,26 @@ document.addEventListener("DOMContentLoaded", function () {
             return false;
         }
         const regex = /^[a-zA-Z0-9_-]{1,15}$/;
-        const isMatching = regex.test(username);
-        if (!isMatching) {
+        if (!regex.test(username)) {
             alert("Invalid Username");
+            return false;
         }
-        return isMatching;
+        return true;
     }
 
     async function fetchUserDetails(username) {
-    const targetUrl = `http://localhost:3000/proxy`;
-    try {
-        searchButton.innerHTML = '<div class="loader"></div>';
-        searchButton.setAttribute("aria-disabled", "true");
-        statsContainer.classList.add("hidden");
-
-        const graphql = {
-            url: 'https://leetcode.com/graphql/',
-            body: {
+        try {
+            console.log("Fetching data for:", username); // Debugging step
+    
+            searchButton.innerHTML = '<div class="loader"></div>';
+            searchButton.setAttribute("disabled", "true");
+            statsContainer.classList.add("hidden");
+    
+            const graphqlQuery = {
                 query: `
-                    query userSessionProgress($username: String!) {
-                        allQuestionsCount {
-                            difficulty
-                            count
-                        }
+                    query getUserProfile($username: String!) {
                         matchedUser(username: $username) {
+                            username
                             submitStats {
                                 acSubmissionNum {
                                     difficulty
@@ -51,30 +47,45 @@ document.addEventListener("DOMContentLoaded", function () {
                                 }
                             }
                         }
+                        allQuestionsCount {
+                            difficulty
+                            count
+                        }
                     }
                 `,
-                variables: { username: username }
-            },
-        };
-
-        const response = await fetch(targetUrl, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(graphql),
-        });
-        if (!response.ok) {
-            throw new Error('Unable to fetch user details.');
+                variables: { username }
+            };
+    
+            const response = await fetch("https://leetcode.com/graphql/", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(graphqlQuery)
+            });
+    
+            console.log("Response Status:", response.status); // Debugging step
+            console.log("Response Headers:", response.headers); // Debugging step
+    
+            if (!response.ok) {
+                throw new Error(`Error ${response.status}: Failed to fetch data from LeetCode.`);
+            }
+    
+            const parsedData = await response.json();
+            console.log("Parsed Data:", parsedData); // Debugging step
+    
+            if (!parsedData.data || !parsedData.data.matchedUser) {
+                throw new Error("User not found on LeetCode.");
+            }
+    
+            displayUserData(parsedData);
+        } catch (error) {
+            console.error("Fetch Error:", error); // Debugging step
+            alert(error.message);
+        } finally {
+            searchButton.innerHTML = "Search";
+            searchButton.removeAttribute("disabled");
         }
-        const parsedData = await response.json();
-        displayUserData(parsedData);
-    } catch (error) {
-        statsContainer.textContent = `Error: ${error.message}`;
-    } finally {
-        searchButton.innerHTML = 'Search';
-        searchButton.removeAttribute('aria-disabled');
     }
-}
-
+    
 
     function updateProgress(solved, total, label, circle) {
         const progressDegree = (solved / total) * 100;
@@ -95,11 +106,13 @@ document.addEventListener("DOMContentLoaded", function () {
         updateProgress(solvedMediumQues, totalMediumQues, mediumLabel, mediumProgressCircle);
         updateProgress(solvedHardQues, totalHardQues, hardLabel, hardProgressCircle);
 
+        const stats = parsedData.data.matchedUser.submitStats.totalSubmissionNum;
+
         const cardsData = [
-            { label: "Overall Submissions", value: parsedData.data.matchedUser.submitStats.totalSubmissionNum.reduce((sum, q) => sum + q.count, 0) },
-            { label: "Easy Submissions", value: parsedData.data.matchedUser.submitStats.totalSubmissionNum.find(q => q.difficulty === "Easy").count },
-            { label: "Medium Submissions", value: parsedData.data.matchedUser.submitStats.totalSubmissionNum.find(q => q.difficulty === "Medium").count },
-            { label: "Hard Submissions", value: parsedData.data.matchedUser.submitStats.totalSubmissionNum.find(q => q.difficulty === "Hard").count },
+            { label: "Total Submissions", value: stats.reduce((sum, q) => sum + q.count, 0) },
+            { label: "Easy Submissions", value: stats.find(q => q.difficulty === "Easy").count },
+            { label: "Medium Submissions", value: stats.find(q => q.difficulty === "Medium").count },
+            { label: "Hard Submissions", value: stats.find(q => q.difficulty === "Hard").count },
         ];
 
         cardStatsContainer.innerHTML = cardsData.map(data => `
@@ -108,6 +121,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <p>${data.value}</p>
             </div>
         `).join("");
+
         statsContainer.classList.remove("hidden");
     }
 
