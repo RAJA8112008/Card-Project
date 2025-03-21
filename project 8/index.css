@@ -5,7 +5,7 @@
 }
 
 body {
-    background-image: url("Screenshot 2025-01-06 174828.png");
+    background-image: url("pexels-katja-79053-592077.jpg");
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -14,6 +14,7 @@ body {
     align-items: center;
     justify-content: center;
     font-family: 'Arial', sans-serif; /* Ensures consistent typography */
+   
 }
 
 .container {
