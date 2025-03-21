@@ -1,4 +1,4 @@
-let key = "30bc860450924b08ac0135322251101";
+let key = "95881de5947a3737d7a45fcfaad07c6f";
 
 let Cityinput = document.getElementById("Cityinput");
 let btn = document.getElementById("search-btn");
@@ -47,7 +47,7 @@ function displayWeather(data) {
     Cityinput.value = '';
 
     const iconCode = data.weather[0].icon;
-    icon.style.backgroundImage = `url(https://openweathermap.org/img/wn/${iconCode}@2x.png)`;
+    icon.style.backgroundImage = `url('https://openweathermap.org/img/wn/${iconCode}@2x.png')`;
 
     weatherInfoCard.style.display = "block";
     errorMessage.textContent = "";
