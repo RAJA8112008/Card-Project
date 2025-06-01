@@ -56,11 +56,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 variables: { username }
             };
     
-            const response = await fetch("https://leetcode.com/graphql/", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(graphqlQuery)
-            });
+           const response = await fetch("https://corsproxy.io/?https://leetcode.com/graphql/", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify(graphqlQuery)
+});
+
     
             console.log("Response Status:", response.status); // Debugging step
             console.log("Response Headers:", response.headers); // Debugging step
